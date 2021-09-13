@@ -1,7 +1,8 @@
-# MongoDB Realm Tutorial with React
+# Innekoll
 
-Repository for tutorial at [my personal blog](https://blog.shahednasser.com/how-to-integrate-mongo-realm-with-react-part-1/)
+Ingredients database with specific data queries and user accounts.
 
+## MongoDB Realm integration with React:
 ## Installation
 
 ```bash
