@@ -3,6 +3,5 @@
     "config_version": 20210101,
     "name": "innekoll_realm",
     "location": "DE-FF",
-    "deployment_model": "LOCAL",
-    "environment": "development"
+    "deployment_model": "LOCAL"
 }

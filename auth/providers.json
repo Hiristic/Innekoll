@@ -3,5 +3,16 @@
         "name": "api-key",
         "type": "api-key",
         "disabled": true
+    },
+    "local-userpass": {
+        "name": "local-userpass",
+        "type": "local-userpass",
+        "config": {
+            "autoConfirm": true,
+            "resetPasswordSubject": "Link to password reset",
+            "resetPasswordUrl": "http://www.innekoll.se/resetPassword",
+            "runConfirmationFunction": false
+        },
+        "disabled": false
     }
 }
