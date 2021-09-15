@@ -7,7 +7,7 @@ function Navigation ({user}) {
     const loggedIn = !isAnon(user)
     return (
         <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home">Restaurant Reviews</Navbar.Brand>
+            <Navbar.Brand href="#home">Innekoll</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
