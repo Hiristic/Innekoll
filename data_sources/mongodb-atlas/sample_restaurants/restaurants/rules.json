@@ -7,9 +7,6 @@
             "apply_when": {
                 "Dado": "%%user.id"
             },
-            "fields": {
-                "Grades": {}
-            },
             "read": true,
             "write": true,
             "insert": true,
@@ -18,27 +15,8 @@
             "additional_fields": {}
         },
         {
-            "name": "Users",
-            "apply_when": {
-                "%%user.data.email": {
-                    "%exists": true
-                }
-            },
-            "fields": {
-                "Grades": {}
-            },
-            "write": true,
-            "insert": true,
-            "delete": false,
-            "search": true,
-            "additional_fields": {}
-        },
-        {
             "name": "non-owner",
             "apply_when": {},
-            "fields": {
-                "Grades": {}
-            },
             "read": true,
             "write": false,
             "insert": false,
