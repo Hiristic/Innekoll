@@ -13,7 +13,7 @@ function RestaurantCard ({restaurant, user}) {
     return (
         <Card className="m-3">
             <Card.Body>
-                <Card.Title>{restaurant.name} <Badge variant="warning">{avg}</Badge></Card.Title>
+                <Card.Title>{restaurant.name} <Badge variant="secondary">{avg}</Badge></Card.Title>
                 {!isAnon(user) && <Link to={`/review/${restaurant._id}`} className="card-link">Add Review</Link>}
             </Card.Body>
         </Card>
