@@ -13,12 +13,23 @@ function LogOut ({mongoContext: {app, user, setUser, setClient}}) {
 
     useEffect(() => {
         async function logout () {
-            console.log("logout")
-            await app.currentUser.logOut()
-            //login anon user
-            setUser(await app.logIn(Realm.Credentials.anonymous()))
-            //set new client
+            try{
+                console.time("Log out")
+                await app.currentUser.logOut()
+                console.timeEnd("Log out")
+            } catch(err){
+                console.error("Log out failed", err);
+            }
+            try{
+                console.time("Annonimous login")
+                setUser(await app.logIn(Realm.Credentials.anonymous()))
+                console.timeEnd("Annonimous login")
+            }catch(err){
+                console.error("Anonimous login failed", err);
+            }
+            console.time("Set new client")
             setClient(app.currentUser.mongoClient('mongodb-atlas'))
+            console.timeEnd("Set new client")
         }
 
         logout()

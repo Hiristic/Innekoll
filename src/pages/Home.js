@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react'
-import RestaurantCard from '../components/RestaurantCard'
+import ProductCard from '../components/ProductCard'
 import Loading from '../components/Loading'
 
 function Home ({mongoContext: {client, user}}) {
-    const [restaurants, setRestaurants] = useState([])
+    const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         async function getData () {
-            const rests = client.db('sample_restaurants').collection('restaurants')
-            setRestaurants((await rests.find()).slice(0, 10))
+            console.time("Get products data")
+            const rests = client.db('innekoll').collection('products')
+            setProducts((await rests.find()).slice(0, 10))
             setLoading(false)
+            console.timeEnd("Get products data")
         }
 
         if (loading && user && client) {
@@ -25,8 +27,8 @@ function Home ({mongoContext: {client, user}}) {
                     <Loading />
                 </div>
             )}
-            {restaurants.map((restaurant) => (
-                <RestaurantCard key={restaurant._id} restaurant={restaurant} user={user} />
+            {products.map((product) => (
+                <ProductCard key={product._id} product={product} user={user} />
             ))}
         </div>
     )

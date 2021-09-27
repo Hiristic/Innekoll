@@ -25,14 +25,27 @@ function Authentication ({mongoContext: {app, user, setUser}, type = 'login'}) {
     async function submitHandler (values) {
         setLoading(true)
         if (type === 'create') {
-            //create
+            console.time("Register user")
             await app.emailPasswordAuth.registerUser(values.email, values.password);
+            console.timeEnd("Register user")
         }
 
-        //login user and redirect to home
+        console.time("Login user and redirect to home")
         const credentials = Realm.Credentials.emailPassword(values.email, values.password);
-        setUser(await app.logIn(credentials))
+        try {
+            const tmp_username = await app.logIn(credentials)
+            setUser(tmp_username)
+        } catch (err){
+            console.error("Login failed", err)
+            if (err.message.includes("401")) {
+                console.error("Login failed")
+                // TODO Print error message
+            } else {
+              throw err;
+            }
+        }
         setLoading(false)
+        console.timeEnd("Login user and redirect to home")
     }
 
     return (
