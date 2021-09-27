@@ -21,7 +21,7 @@
             "name": "User",
             "apply_when": {
                 "%%user.data.email": {
-                    "%exists": true
+                    "$exists": true
                 }
             },
             "fields": {
@@ -43,6 +43,19 @@
             "write": false,
             "insert": false,
             "delete": false,
+            "search": true,
+            "additional_fields": {}
+        },
+        {
+            "name": "test",
+            "apply_when": {
+                "dado@dado.net": "%%user.data.email"
+            },
+            "fields": {
+                "grades": {}
+            },
+            "insert": true,
+            "delete": true,
             "search": true,
             "additional_fields": {}
         }

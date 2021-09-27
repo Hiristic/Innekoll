@@ -1,0 +1,22 @@
+{
+    "collection": "user_data",
+    "database": "innekoll",
+    "roles": [
+        {
+            "name": "owner",
+            "apply_when": {
+                "owner": "%%user.id"
+            },
+            "fields": {
+                "chemicals": {},
+                "products": {}
+            },
+            "read": true,
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {}
+        }
+    ]
+}
