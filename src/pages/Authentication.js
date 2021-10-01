@@ -41,7 +41,7 @@ function Authentication ({mongoContext: {app, user, setUser}, type = 'login'}) {
                 console.error("Login failed")
                 // TODO Print error message
             } else {
-              throw err;
+              throw err
             }
         }
         setLoading(false)

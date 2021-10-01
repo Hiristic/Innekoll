@@ -14,6 +14,7 @@ function Navigation ({user}) {
                     <Link to="/" className="mx-2">Home</Link>
                     {!loggedIn && <Link to="/signup" className="mx-2">Sign Up</Link>}
                     {!loggedIn && <Link to="/signin" className="mx-2">Sign In</Link>}
+                    {!loggedIn && <Link to="/login" className="mx-2">Log In</Link>}
                     {loggedIn && <Link to="/logout" className="mx-2">Log out</Link>}
                 </Nav>
             </Navbar.Collapse>

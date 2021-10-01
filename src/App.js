@@ -13,6 +13,7 @@ import Navigation from "./components/Navigation"
 import Authentication from "./pages/Authentication"
 import LogOut from "./pages/LogOut"
 import AddReview from "./pages/AddReview"
+import Login from "./pages/Login"
 
 function App() {
   const [client, setClient] = useState(null)
@@ -45,6 +46,7 @@ function App() {
           <Switch>
             <Route path="/signup" render={() => renderComponent(Authentication, {type: 'create'})} />
             <Route path="/signin" render={() => renderComponent(Authentication)} />
+            <Route path="/login" render={() => renderComponent(Login)} />
             <Route path="/logout" render={() => renderComponent(LogOut)} />
             <Route path="/review/:id" render={() => renderComponent(AddReview)} />
             <Route path="/" render={() => renderComponent(Home)} />
