@@ -19,6 +19,8 @@ import { Logo } from '../components/Login/Logo'
 import { isAnon } from '../utils'
 import { useHistory } from 'react-router'
 import * as Realm from 'realm-web'
+import { ChakraProvider } from "@chakra-ui/react"
+
 
 function Login ({mongoContext: {app, user, setUser}, type = 'login'}) {
     const history = useHistory()
@@ -57,6 +59,7 @@ function Login ({mongoContext: {app, user, setUser}, type = 'login'}) {
     }
 
     return (
+    <ChakraProvider>
         <div className="mt-3">
             <Box
             bg={useColorModeValue('gray.50', 'inherit')}
@@ -66,18 +69,10 @@ function Login ({mongoContext: {app, user, setUser}, type = 'login'}) {
                 base: '4',
                 lg: '8',
             }}
-        >
+            >
             <Box maxW="md" mx="auto">
-            <Logo
-                mx="auto"
-                h="8"
-                mb={{
-                    base: '10',
-                    md: '20',
-                }}
-            />
             <Heading textAlign="center" size="xl" fontWeight="extrabold">
-                Sign in to your account
+                Sign in
             </Heading>
             <Text mt="4" mb="8" align="center" maxW="md" fontWeight="medium">
                 <Text as="span">Don&apos;t have an account?</Text>
@@ -104,6 +99,7 @@ function Login ({mongoContext: {app, user, setUser}, type = 'login'}) {
             </Box>
         </Box>
         </div>
+      </ChakraProvider>
     )
 }
 

@@ -4,7 +4,7 @@ import {
   Route,
 } from "react-router-dom"
 import Home from "./pages/Home"
-import 'bootstrap/dist/css/bootstrap.min.css'
+//import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container } from "react-bootstrap"
 import MongoContext from './MongoContext'
 import { useEffect, useState } from "react"
